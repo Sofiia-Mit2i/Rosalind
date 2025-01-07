@@ -1,0 +1,12 @@
+def MajorityElement ():
+    parameters = file.readline().split()
+    arraysnum = parameters [0]
+    arraylen = parameters [1]
+    majelem = []
+    for i in arraysnum:
+        list = sort(file.readline().split())
+
+
+file_path = input('Please enter a path to your dataset :')
+with open (file_path, 'r') as file:
+     
