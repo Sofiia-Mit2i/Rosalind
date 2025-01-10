@@ -1,0 +1,30 @@
+def Merge2SortArr (file_path):
+    with open (file_path, 'r') as file:
+        len1 = int(file.readline())
+        arr1 = list(map(int, file.readline().split()))
+        len2 = int(file.readline())
+        arr2 = list(map(int, file.readline().split()))
+
+        merged = []
+        i, j = 0, 0 
+        while i < len1 and j < len2:
+            if arr1[i] < arr2[j]:
+                merged.append(arr1[i])
+                i+=1
+            elif arr2[j] < arr1[i]:
+                merged.append(arr2[j])
+                j+=1
+            elif arr1[i] == arr2[j]:
+                merged.append(arr2[j])
+                merged.append(arr1[i])
+                i+=1
+                j+=1
+
+        merged.extend(arr1[i:])
+        merged.extend(arr2[j:])
+
+        return(merged)
+
+file_path = input("Please, show me the way: ")
+truth = Merge2SortArr(file_path)
+print(*truth)

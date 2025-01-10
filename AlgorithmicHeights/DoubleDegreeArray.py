@@ -10,16 +10,16 @@ def DDArray(file_path):
              line = line.strip().split()
              content.extend(line)
          sorted_content = sorted(content)
-         degrees = {i: 0 for i in range(1, nodes+1)}
-         node_count = {}
+         #degrees = {i: 0 for i in range(1, nodes+1)}
+         node_count = {i: 0 for i in range(1, nodes+1)}
          for node in sorted_content:
              node = int(node)
              if node in node_count:
                 node_count[node] += 1
              else:
                 node_count[node] = 1
-         for node in node_count:
-             degrees[node] = node_count[node]
+         #for node in node_count:
+           #   degrees[node] = node_count[node]
          degrees_sum = {i: 0 for i in range(1, nodes+1)}
          for i in range(0, len(content), 2):
             current_node = int(content[i])
